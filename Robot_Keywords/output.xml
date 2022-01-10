@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.3 on win32)" generated="20220110 11:26:08.073" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Keywords" source="C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_Keywords">
+<suite id="s1-s1" name="KeywordsTest" source="C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_Keywords\KeywordsTest.robot">
+<kw name="Log" library="BuiltIn" type="SETUP">
+<arg>I'm inside test suite setup</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 11:26:08.417" level="INFO">I'm inside test suite setup</msg>
+<status status="PASS" starttime="20220110 11:26:08.417" endtime="20220110 11:26:08.417"/>
+</kw>
+<test id="s1-s1-t1" name="MyKeywordTest">
+<kw name="Log" library="BuiltIn" type="SETUP">
+<arg>I'm inside test setup</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 11:26:08.418" level="INFO">I'm inside test setup</msg>
+<status status="PASS" starttime="20220110 11:26:08.418" endtime="20220110 11:26:08.418"/>
+</kw>
+<kw name="InitialRoutineKW">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220110 11:26:08.419" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220110 11:26:08.419" endtime="20220110 11:26:12.557"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>${WAIT_TIME}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220110 11:26:12.558" endtime="20220110 11:26:12.561"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:08.418" endtime="20220110 11:26:12.561"/>
+</kw>
+<kw name="LoginKW">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=txtUsername</arg>
+<arg>${CREDENTIALS}[0]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220110 11:26:12.564" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
+<status status="PASS" starttime="20220110 11:26:12.563" endtime="20220110 11:26:12.665"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=txtPassword</arg>
+<arg>${LOGINDATA}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220110 11:26:12.666" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
+<msg timestamp="20220110 11:26:12.709" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220110 11:26:12.782" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220110 11:26:12.665" endtime="20220110 11:26:12.782"/>
+</kw>
+<kw name="Submit Form" library="SeleniumLibrary">
+<arg>//form[@id="frmLogin"]</arg>
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20220110 11:26:12.783" level="INFO">Submitting form '//form[@id="frmLogin"]'.</msg>
+<status status="PASS" starttime="20220110 11:26:12.782" endtime="20220110 11:26:15.661"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:12.562" endtime="20220110 11:26:15.661"/>
+</kw>
+<kw name="SleepKW">
+<kw name="Sleep" library="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220110 11:26:18.668" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220110 11:26:15.662" endtime="20220110 11:26:18.668"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:15.662" endtime="20220110 11:26:18.669"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=welcome</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220110 11:26:18.670" level="INFO">Clicking element 'id=welcome'.</msg>
+<status status="PASS" starttime="20220110 11:26:18.669" endtime="20220110 11:26:18.731"/>
+</kw>
+<kw name="SleepKW">
+<kw name="Sleep" library="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220110 11:26:21.740" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220110 11:26:18.731" endtime="20220110 11:26:21.740"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:18.731" endtime="20220110 11:26:21.740"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[contains(text(), "Support")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220110 11:26:21.741" level="INFO">Clicking element '//a[contains(text(), "Support")]'.</msg>
+<status status="PASS" starttime="20220110 11:26:21.741" endtime="20220110 11:26:22.790"/>
+</kw>
+<kw name="SleepKW">
+<kw name="Sleep" library="BuiltIn">
+<arg>${WAIT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220110 11:26:25.803" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220110 11:26:22.791" endtime="20220110 11:26:25.803"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:22.791" endtime="20220110 11:26:25.803"/>
+</kw>
+<kw name="ExitKw">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=welcome</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220110 11:26:25.804" level="INFO">Clicking element 'id=welcome'.</msg>
+<status status="PASS" starttime="20220110 11:26:25.804" endtime="20220110 11:26:25.845"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[contains(text(), "Logout")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220110 11:26:25.846" level="INFO">Clicking element '//a[contains(text(), "Logout")]'.</msg>
+<status status="PASS" starttime="20220110 11:26:25.845" endtime="20220110 11:26:26.543"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:25.803" endtime="20220110 11:26:26.543"/>
+</kw>
+<kw name="LogsKW">
+<kw name="Log" library="BuiltIn">
+<arg>VarTest Complete by %{username} on %{os}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 11:26:26.544" level="INFO">VarTest Complete by Evgeny on Windows_NT</msg>
+<status status="PASS" starttime="20220110 11:26:26.544" endtime="20220110 11:26:26.544"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Buidin Vars: C:\\Users\\Evgeny\\Desktop\\programming training\\eclipse\\Robot_Keywords, ${TEST NAME}, ${SUITE NAME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 11:26:26.545" level="INFO">Buidin Vars: C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_Keywords, MyKeywordTest, Robot Keywords.KeywordsTest</msg>
+<status status="PASS" starttime="20220110 11:26:26.544" endtime="20220110 11:26:26.545"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220110 11:26:26.545" endtime="20220110 11:26:28.752"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:26.543" endtime="20220110 11:26:28.753"/>
+</kw>
+<kw name="Log" library="BuiltIn" type="TEARDOWN">
+<arg>I'm inside test teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 11:26:28.753" level="INFO">I'm inside test teardown</msg>
+<status status="PASS" starttime="20220110 11:26:28.753" endtime="20220110 11:26:28.754"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:08.417" endtime="20220110 11:26:28.754"/>
+</test>
+<kw name="Log" library="BuiltIn" type="TEARDOWN">
+<arg>I'm inside test suite teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 11:26:28.755" level="INFO">I'm inside test suite teardown</msg>
+<status status="PASS" starttime="20220110 11:26:28.754" endtime="20220110 11:26:28.755"/>
+</kw>
+<status status="PASS" starttime="20220110 11:26:08.124" endtime="20220110 11:26:28.755"/>
+</suite>
+<status status="PASS" starttime="20220110 11:26:08.105" endtime="20220110 11:26:28.756"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Keywords">Robot Keywords</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="KeywordsTest">Robot Keywords.KeywordsTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
