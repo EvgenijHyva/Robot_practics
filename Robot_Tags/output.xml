@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.3 on win32)" generated="20220110 00:22:47.795" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Tags" source="C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_Tags">
+<suite id="s1-s1" name="Test" source="C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_Tags\test">
+<suite id="s1-s1-s1" name="Robot Tag test" source="C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_Tags\test\Robot_Tag_test.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220110 00:22:48.032" level="INFO">Opening browser 'Chrome' to base url 'https://google.com'.</msg>
+<status status="PASS" starttime="20220110 00:22:48.032" endtime="20220110 00:22:50.399"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TestTags1">
+<kw name="Log" library="BuiltIn">
+<arg>Test begin</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 00:22:50.400" level="INFO">Test begin</msg>
+<status status="PASS" starttime="20220110 00:22:50.400" endtime="20220110 00:22:50.400"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220110 00:22:51.407" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220110 00:22:50.400" endtime="20220110 00:22:51.407"/>
+</kw>
+<kw name="acceptKw">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=L2AGLb</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220110 00:22:51.409" level="INFO">Clicking element 'id=L2AGLb'.</msg>
+<status status="PASS" starttime="20220110 00:22:51.408" endtime="20220110 00:22:51.448"/>
+</kw>
+<status status="PASS" starttime="20220110 00:22:51.408" endtime="20220110 00:22:51.448"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220110 00:22:52.459" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220110 00:22:51.448" endtime="20220110 00:22:52.459"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220110 00:22:50.399" endtime="20220110 00:22:52.459"/>
+</test>
+<test id="s1-s1-s1-t2" name="TestTags2">
+<kw name="Log" library="BuiltIn">
+<arg>Test number 2</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 00:22:52.461" level="INFO">Test number 2</msg>
+<status status="PASS" starttime="20220110 00:22:52.461" endtime="20220110 00:22:52.461"/>
+</kw>
+<kw name="WaitUntilLoadKW">
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220110 00:22:52.462" endtime="20220110 00:22:52.463"/>
+</kw>
+<status status="PASS" starttime="20220110 00:22:52.461" endtime="20220110 00:22:52.463"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=q</arg>
+<arg>Selenium TestTag 2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220110 00:22:52.464" level="INFO">Typing text 'Selenium TestTag 2' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20220110 00:22:52.463" endtime="20220110 00:22:52.598"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220110 00:22:54.601" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220110 00:22:52.598" endtime="20220110 00:22:54.601"/>
+</kw>
+<tag>sanity</tag>
+<status status="PASS" starttime="20220110 00:22:52.460" endtime="20220110 00:22:54.601"/>
+</test>
+<test id="s1-s1-s1-t3" name="TestTags3">
+<kw name="Log" library="BuiltIn">
+<arg>Test number 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 00:22:54.603" level="INFO">Test number 3</msg>
+<status status="PASS" starttime="20220110 00:22:54.602" endtime="20220110 00:22:54.603"/>
+</kw>
+<kw name="WaitUntilLoadKW">
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220110 00:22:54.603" endtime="20220110 00:22:54.605"/>
+</kw>
+<status status="PASS" starttime="20220110 00:22:54.603" endtime="20220110 00:22:54.605"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=q</arg>
+<arg>Selenium TestTag 3</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220110 00:22:54.605" level="INFO">Typing text 'Selenium TestTag 3' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20220110 00:22:54.605" endtime="20220110 00:22:54.710"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220110 00:22:57.713" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220110 00:22:54.711" endtime="20220110 00:22:57.713"/>
+</kw>
+<tag>sanity</tag>
+<status status="PASS" starttime="20220110 00:22:54.602" endtime="20220110 00:22:57.713"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220110 00:22:57.714" endtime="20220110 00:22:59.944"/>
+</kw>
+<status status="PASS" starttime="20220110 00:22:47.846" endtime="20220110 00:22:59.944"/>
+</suite>
+<status status="PASS" starttime="20220110 00:22:47.844" endtime="20220110 00:22:59.945"/>
+</suite>
+<status status="PASS" starttime="20220110 00:22:47.824" endtime="20220110 00:22:59.946"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">sanity</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Robot Tags">Robot Tags</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Test">Robot Tags.Test</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1-s1" name="Robot Tag test">Robot Tags.Test.Robot Tag test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
