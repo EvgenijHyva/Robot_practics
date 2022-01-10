@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.3 on win32)" generated="20220110 10:10:51.977" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot loops" source="C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_loops">
+<suite id="s1-s1" name="LoopTest" source="C:\Users\Evgeny\Desktop\programming training\eclipse\Robot_loops\LoopTest.robot">
+<test id="s1-s1-t1" name="loopsTest1">
+<kw name="Create List" library="BuiltIn">
+<var>@{list}</var>
+<arg>one</arg>
+<arg>two</arg>
+<arg>three</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220110 10:10:52.030" level="INFO">@{list} = [ one | two | three ]</msg>
+<status status="PASS" starttime="20220110 10:10:52.029" endtime="20220110 10:10:52.030"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{list}</value>
+<iter>
+<var name="${item}">one</var>
+<kw name="Log" library="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.031" level="INFO">one</msg>
+<status status="PASS" starttime="20220110 10:10:52.030" endtime="20220110 10:10:52.031"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.030" endtime="20220110 10:10:52.031"/>
+</iter>
+<iter>
+<var name="${item}">two</var>
+<kw name="Log" library="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.031" level="INFO">two</msg>
+<status status="PASS" starttime="20220110 10:10:52.031" endtime="20220110 10:10:52.031"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.031" endtime="20220110 10:10:52.032"/>
+</iter>
+<iter>
+<var name="${item}">three</var>
+<kw name="Log" library="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.032" level="INFO">three</msg>
+<status status="PASS" starttime="20220110 10:10:52.032" endtime="20220110 10:10:52.032"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.032" endtime="20220110 10:10:52.032"/>
+</iter>
+<status status="PASS" starttime="20220110 10:10:52.030" endtime="20220110 10:10:52.033"/>
+</for>
+<tag>ListCreationOnPlace</tag>
+<status status="PASS" starttime="20220110 10:10:52.029" endtime="20220110 10:10:52.033"/>
+</test>
+<test id="s1-s1-t2" name="LoopOverRobots">
+<for flavor="IN">
+<var>${rob}</var>
+<value>@{robots}</value>
+<iter>
+<var name="${rob}">Benter</var>
+<kw name="Log" library="BuiltIn">
+<arg>${rob}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.034" level="INFO">Benter</msg>
+<status status="PASS" starttime="20220110 10:10:52.034" endtime="20220110 10:10:52.034"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.034" endtime="20220110 10:10:52.034"/>
+</iter>
+<iter>
+<var name="${rob}">Johny</var>
+<kw name="Log" library="BuiltIn">
+<arg>${rob}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.035" level="INFO">Johny</msg>
+<status status="PASS" starttime="20220110 10:10:52.035" endtime="20220110 10:10:52.035"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.035" endtime="20220110 10:10:52.035"/>
+</iter>
+<iter>
+<var name="${rob}">Terminator</var>
+<kw name="Log" library="BuiltIn">
+<arg>${rob}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.036" level="INFO">Terminator</msg>
+<status status="PASS" starttime="20220110 10:10:52.035" endtime="20220110 10:10:52.036"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.035" endtime="20220110 10:10:52.036"/>
+</iter>
+<iter>
+<var name="${rob}">Robocop</var>
+<kw name="Log" library="BuiltIn">
+<arg>${rob}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.037" level="INFO">Robocop</msg>
+<status status="PASS" starttime="20220110 10:10:52.036" endtime="20220110 10:10:52.037"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.036" endtime="20220110 10:10:52.037"/>
+</iter>
+<status status="PASS" starttime="20220110 10:10:52.033" endtime="20220110 10:10:52.037"/>
+</for>
+<tag>Robots</tag>
+<status status="PASS" starttime="20220110 10:10:52.033" endtime="20220110 10:10:52.037"/>
+</test>
+<test id="s1-s1-t3" name="LoopBreakCondition">
+<for flavor="IN">
+<var>${robot}</var>
+<value>@{robots}</value>
+<iter>
+<var name="${robot}">Benter</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>$robot == "Johny"</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220110 10:10:52.038" endtime="20220110 10:10:52.041"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${robot}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.042" level="INFO">Benter</msg>
+<status status="PASS" starttime="20220110 10:10:52.041" endtime="20220110 10:10:52.042"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.038" endtime="20220110 10:10:52.042"/>
+</iter>
+<iter>
+<var name="${robot}">Johny</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>$robot == "Johny"</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<msg timestamp="20220110 10:10:52.043" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20220110 10:10:52.042" endtime="20220110 10:10:52.043"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.042" endtime="20220110 10:10:52.043"/>
+</iter>
+<status status="PASS" starttime="20220110 10:10:52.038" endtime="20220110 10:10:52.043"/>
+</for>
+<tag>RobotsFind</tag>
+<status status="PASS" starttime="20220110 10:10:52.037" endtime="20220110 10:10:52.044"/>
+</test>
+<test id="s1-s1-t4" name="Executeonlythreetimes">
+<for flavor="IN">
+<var>${robot}</var>
+<value>@{ROBOTS}</value>
+<iter>
+<var name="${robot}">Benter</var>
+<kw name="Continue For Loop If" library="BuiltIn">
+<arg>$robot == 'Terminator'</arg>
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220110 10:10:52.045" endtime="20220110 10:10:52.045"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${robot}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.046" level="INFO">Benter</msg>
+<status status="PASS" starttime="20220110 10:10:52.045" endtime="20220110 10:10:52.046"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.045" endtime="20220110 10:10:52.046"/>
+</iter>
+<iter>
+<var name="${robot}">Johny</var>
+<kw name="Continue For Loop If" library="BuiltIn">
+<arg>$robot == 'Terminator'</arg>
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220110 10:10:52.046" endtime="20220110 10:10:52.046"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${robot}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.047" level="INFO">Johny</msg>
+<status status="PASS" starttime="20220110 10:10:52.047" endtime="20220110 10:10:52.047"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.046" endtime="20220110 10:10:52.047"/>
+</iter>
+<iter>
+<var name="${robot}">Terminator</var>
+<kw name="Continue For Loop If" library="BuiltIn">
+<arg>$robot == 'Terminator'</arg>
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<msg timestamp="20220110 10:10:52.048" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20220110 10:10:52.047" endtime="20220110 10:10:52.048"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.047" endtime="20220110 10:10:52.048"/>
+</iter>
+<iter>
+<var name="${robot}">Robocop</var>
+<kw name="Continue For Loop If" library="BuiltIn">
+<arg>$robot == 'Terminator'</arg>
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220110 10:10:52.048" endtime="20220110 10:10:52.049"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${robot}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.049" level="INFO">Robocop</msg>
+<status status="PASS" starttime="20220110 10:10:52.049" endtime="20220110 10:10:52.049"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.048" endtime="20220110 10:10:52.049"/>
+</iter>
+<status status="PASS" starttime="20220110 10:10:52.044" endtime="20220110 10:10:52.050"/>
+</for>
+<tag>ContinueIfTrue</tag>
+<status status="PASS" starttime="20220110 10:10:52.044" endtime="20220110 10:10:52.050"/>
+</test>
+<test id="s1-s1-t5" name="Executetwotimes">
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220110 10:10:52.051" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20220110 10:10:52.051" endtime="20220110 10:10:52.051"/>
+</kw>
+<for flavor="IN">
+<var>${robot}</var>
+<value>@{ROBOTS}</value>
+<iter>
+<var name="${robot}">Benter</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${index} &gt; 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220110 10:10:52.051" endtime="20220110 10:10:52.052"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${robot}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.052" level="INFO">Benter</msg>
+<status status="PASS" starttime="20220110 10:10:52.052" endtime="20220110 10:10:52.052"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.053" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20220110 10:10:52.052" endtime="20220110 10:10:52.053"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.051" endtime="20220110 10:10:52.053"/>
+</iter>
+<iter>
+<var name="${robot}">Johny</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${index} &gt; 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220110 10:10:52.053" endtime="20220110 10:10:52.054"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${robot}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220110 10:10:52.054" level="INFO">Johny</msg>
+<status status="PASS" starttime="20220110 10:10:52.054" endtime="20220110 10:10:52.054"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.055" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.054" endtime="20220110 10:10:52.055"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.053" endtime="20220110 10:10:52.055"/>
+</iter>
+<iter>
+<var name="${robot}">Terminator</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${index} &gt; 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<msg timestamp="20220110 10:10:52.055" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20220110 10:10:52.055" endtime="20220110 10:10:52.056"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.055" endtime="20220110 10:10:52.056"/>
+</iter>
+<status status="PASS" starttime="20220110 10:10:52.051" endtime="20220110 10:10:52.056"/>
+</for>
+<tag>Indexing</tag>
+<status status="PASS" starttime="20220110 10:10:52.050" endtime="20220110 10:10:52.056"/>
+</test>
+<test id="s1-s1-t6" name="IF_ELSE_Conditions">
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${MAX_TRIES}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.057" level="INFO">${random} = 10</msg>
+<status status="PASS" starttime="20220110 10:10:52.057" endtime="20220110 10:10:52.058"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.058" endtime="20220110 10:10:52.058"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.058" endtime="20220110 10:10:52.058"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.058" endtime="20220110 10:10:52.058"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.057" endtime="20220110 10:10:52.058"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.062" level="INFO">${random} = 5</msg>
+<status status="PASS" starttime="20220110 10:10:52.061" endtime="20220110 10:10:52.062"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.064" endtime="20220110 10:10:52.064"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.063" endtime="20220110 10:10:52.065"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.063" endtime="20220110 10:10:52.065"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.060" endtime="20220110 10:10:52.065"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.068" level="INFO">${random} = 0</msg>
+<status status="PASS" starttime="20220110 10:10:52.067" endtime="20220110 10:10:52.068"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.070" endtime="20220110 10:10:52.070"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.069" endtime="20220110 10:10:52.071"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.069" endtime="20220110 10:10:52.071"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.066" endtime="20220110 10:10:52.071"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.073" level="INFO">${random} = 9</msg>
+<status status="PASS" starttime="20220110 10:10:52.072" endtime="20220110 10:10:52.074"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.075" endtime="20220110 10:10:52.075"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.074" endtime="20220110 10:10:52.076"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.074" endtime="20220110 10:10:52.077"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.072" endtime="20220110 10:10:52.077"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.079" level="INFO">${random} = 4</msg>
+<status status="PASS" starttime="20220110 10:10:52.078" endtime="20220110 10:10:52.079"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.081" endtime="20220110 10:10:52.081"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.080" endtime="20220110 10:10:52.082"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.080" endtime="20220110 10:10:52.084"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.078" endtime="20220110 10:10:52.084"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.087" level="INFO">${random} = 8</msg>
+<status status="PASS" starttime="20220110 10:10:52.086" endtime="20220110 10:10:52.087"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.089" endtime="20220110 10:10:52.089"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.088" endtime="20220110 10:10:52.090"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.088" endtime="20220110 10:10:52.090"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.085" endtime="20220110 10:10:52.090"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.092" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20220110 10:10:52.091" endtime="20220110 10:10:52.093"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.095" endtime="20220110 10:10:52.095"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.094" endtime="20220110 10:10:52.096"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.094" endtime="20220110 10:10:52.096"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.091" endtime="20220110 10:10:52.096"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.099" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20220110 10:10:52.098" endtime="20220110 10:10:52.099"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.101" endtime="20220110 10:10:52.102"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.100" endtime="20220110 10:10:52.102"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.100" endtime="20220110 10:10:52.103"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.097" endtime="20220110 10:10:52.103"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.105" level="INFO">${random} = 10</msg>
+<status status="PASS" starttime="20220110 10:10:52.104" endtime="20220110 10:10:52.106"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.107" endtime="20220110 10:10:52.107"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.106" endtime="20220110 10:10:52.108"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.106" endtime="20220110 10:10:52.108"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.103" endtime="20220110 10:10:52.109"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.111" level="INFO">${random} = 1</msg>
+<status status="PASS" starttime="20220110 10:10:52.110" endtime="20220110 10:10:52.111"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.112" endtime="20220110 10:10:52.113"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.112" endtime="20220110 10:10:52.113"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.112" endtime="20220110 10:10:52.114"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.109" endtime="20220110 10:10:52.114"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.117" level="INFO">${random} = 7</msg>
+<status status="PASS" starttime="20220110 10:10:52.115" endtime="20220110 10:10:52.118"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220110 10:10:52.119" endtime="20220110 10:10:52.120"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.119" endtime="20220110 10:10:52.120"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.118" endtime="20220110 10:10:52.121"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.115" endtime="20220110 10:10:52.121"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.123" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20220110 10:10:52.122" endtime="20220110 10:10:52.123"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.125" endtime="20220110 10:10:52.125"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.124" endtime="20220110 10:10:52.126"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.124" endtime="20220110 10:10:52.126"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.121" endtime="20220110 10:10:52.126"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.128" level="INFO">${random} = 0</msg>
+<status status="PASS" starttime="20220110 10:10:52.127" endtime="20220110 10:10:52.129"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.130" endtime="20220110 10:10:52.130"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.129" endtime="20220110 10:10:52.131"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.129" endtime="20220110 10:10:52.131"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.127" endtime="20220110 10:10:52.132"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.134" level="INFO">${random} = 2</msg>
+<status status="PASS" starttime="20220110 10:10:52.133" endtime="20220110 10:10:52.134"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.135" endtime="20220110 10:10:52.136"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.135" endtime="20220110 10:10:52.136"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.135" endtime="20220110 10:10:52.137"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.132" endtime="20220110 10:10:52.137"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.139" level="INFO">${random} = 9</msg>
+<status status="PASS" starttime="20220110 10:10:52.138" endtime="20220110 10:10:52.139"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.141" endtime="20220110 10:10:52.141"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.140" endtime="20220110 10:10:52.142"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.140" endtime="20220110 10:10:52.142"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.137" endtime="20220110 10:10:52.142"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.144" level="INFO">${random} = 8</msg>
+<status status="PASS" starttime="20220110 10:10:52.143" endtime="20220110 10:10:52.144"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.146" endtime="20220110 10:10:52.146"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.145" endtime="20220110 10:10:52.147"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.145" endtime="20220110 10:10:52.147"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.143" endtime="20220110 10:10:52.147"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.149" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20220110 10:10:52.148" endtime="20220110 10:10:52.149"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.151" endtime="20220110 10:10:52.153"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.150" endtime="20220110 10:10:52.155"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.150" endtime="20220110 10:10:52.156"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.148" endtime="20220110 10:10:52.156"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.159" level="INFO">${random} = 9</msg>
+<status status="PASS" starttime="20220110 10:10:52.158" endtime="20220110 10:10:52.160"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.162" endtime="20220110 10:10:52.162"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.161" endtime="20220110 10:10:52.163"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.161" endtime="20220110 10:10:52.164"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.157" endtime="20220110 10:10:52.164"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.167" level="INFO">${random} = 7</msg>
+<status status="PASS" starttime="20220110 10:10:52.166" endtime="20220110 10:10:52.167"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220110 10:10:52.171" endtime="20220110 10:10:52.173"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.169" endtime="20220110 10:10:52.175"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.168" endtime="20220110 10:10:52.175"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.165" endtime="20220110 10:10:52.175"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.179" level="INFO">${random} = 4</msg>
+<status status="PASS" starttime="20220110 10:10:52.178" endtime="20220110 10:10:52.181"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.183" endtime="20220110 10:10:52.184"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.182" endtime="20220110 10:10:52.185"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.182" endtime="20220110 10:10:52.186"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.177" endtime="20220110 10:10:52.186"/>
+</iter>
+<iter>
+<var name="${i}">20</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.193" level="INFO">${random} = 1</msg>
+<status status="PASS" starttime="20220110 10:10:52.190" endtime="20220110 10:10:52.194"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.196" endtime="20220110 10:10:52.197"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.195" endtime="20220110 10:10:52.197"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.195" endtime="20220110 10:10:52.199"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.189" endtime="20220110 10:10:52.199"/>
+</iter>
+<iter>
+<var name="${i}">21</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.204" level="INFO">${random} = 2</msg>
+<status status="PASS" starttime="20220110 10:10:52.201" endtime="20220110 10:10:52.206"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.209" endtime="20220110 10:10:52.210"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.207" endtime="20220110 10:10:52.211"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.206" endtime="20220110 10:10:52.213"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.200" endtime="20220110 10:10:52.213"/>
+</iter>
+<iter>
+<var name="${i}">22</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.217" level="INFO">${random} = 5</msg>
+<status status="PASS" starttime="20220110 10:10:52.214" endtime="20220110 10:10:52.217"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.222" endtime="20220110 10:10:52.223"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.219" endtime="20220110 10:10:52.224"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.218" endtime="20220110 10:10:52.226"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.213" endtime="20220110 10:10:52.226"/>
+</iter>
+<iter>
+<var name="${i}">23</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.231" level="INFO">${random} = 1</msg>
+<status status="PASS" starttime="20220110 10:10:52.230" endtime="20220110 10:10:52.232"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.235" endtime="20220110 10:10:52.236"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.234" endtime="20220110 10:10:52.239"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.234" endtime="20220110 10:10:52.240"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.227" endtime="20220110 10:10:52.240"/>
+</iter>
+<iter>
+<var name="${i}">24</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.245" level="INFO">${random} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.243" endtime="20220110 10:10:52.246"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.248" endtime="20220110 10:10:52.249"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.247" endtime="20220110 10:10:52.250"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.247" endtime="20220110 10:10:52.251"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.242" endtime="20220110 10:10:52.251"/>
+</iter>
+<iter>
+<var name="${i}">25</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.256" level="INFO">${random} = 10</msg>
+<status status="PASS" starttime="20220110 10:10:52.254" endtime="20220110 10:10:52.257"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.260" endtime="20220110 10:10:52.261"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.259" endtime="20220110 10:10:52.262"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.259" endtime="20220110 10:10:52.262"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.252" endtime="20220110 10:10:52.262"/>
+</iter>
+<iter>
+<var name="${i}">26</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.266" level="INFO">${random} = 7</msg>
+<status status="PASS" starttime="20220110 10:10:52.264" endtime="20220110 10:10:52.267"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220110 10:10:52.271" endtime="20220110 10:10:52.273"/>
+</kw>
+<status status="PASS" starttime="20220110 10:10:52.269" endtime="20220110 10:10:52.274"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.268" endtime="20220110 10:10:52.275"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.263" endtime="20220110 10:10:52.275"/>
+</iter>
+<iter>
+<var name="${i}">27</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.278" level="INFO">${random} = 10</msg>
+<status status="PASS" starttime="20220110 10:10:52.277" endtime="20220110 10:10:52.278"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.281" endtime="20220110 10:10:52.282"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.279" endtime="20220110 10:10:52.283"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.279" endtime="20220110 10:10:52.284"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.276" endtime="20220110 10:10:52.284"/>
+</iter>
+<iter>
+<var name="${i}">28</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.292" level="INFO">${random} = 0</msg>
+<status status="PASS" starttime="20220110 10:10:52.289" endtime="20220110 10:10:52.293"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.295" endtime="20220110 10:10:52.296"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.294" endtime="20220110 10:10:52.297"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.294" endtime="20220110 10:10:52.299"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.286" endtime="20220110 10:10:52.300"/>
+</iter>
+<iter>
+<var name="${i}">29</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.306" level="INFO">${random} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.303" endtime="20220110 10:10:52.308"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.312" endtime="20220110 10:10:52.312"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.310" endtime="20220110 10:10:52.313"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.309" endtime="20220110 10:10:52.314"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.300" endtime="20220110 10:10:52.314"/>
+</iter>
+<iter>
+<var name="${i}">30</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.319" level="INFO">${random} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.318" endtime="20220110 10:10:52.319"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.324" endtime="20220110 10:10:52.325"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.322" endtime="20220110 10:10:52.327"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.322" endtime="20220110 10:10:52.328"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.317" endtime="20220110 10:10:52.328"/>
+</iter>
+<iter>
+<var name="${i}">31</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.333" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20220110 10:10:52.331" endtime="20220110 10:10:52.335"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.339" endtime="20220110 10:10:52.341"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.337" endtime="20220110 10:10:52.342"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.336" endtime="20220110 10:10:52.344"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.330" endtime="20220110 10:10:52.344"/>
+</iter>
+<iter>
+<var name="${i}">32</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.347" level="INFO">${random} = 1</msg>
+<status status="PASS" starttime="20220110 10:10:52.346" endtime="20220110 10:10:52.348"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.352" endtime="20220110 10:10:52.353"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.350" endtime="20220110 10:10:52.354"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.350" endtime="20220110 10:10:52.354"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.345" endtime="20220110 10:10:52.355"/>
+</iter>
+<iter>
+<var name="${i}">33</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.357" level="INFO">${random} = 9</msg>
+<status status="PASS" starttime="20220110 10:10:52.356" endtime="20220110 10:10:52.358"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.363" endtime="20220110 10:10:52.364"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.359" endtime="20220110 10:10:52.366"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.359" endtime="20220110 10:10:52.368"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.355" endtime="20220110 10:10:52.368"/>
+</iter>
+<iter>
+<var name="${i}">34</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.374" level="INFO">${random} = 0</msg>
+<status status="PASS" starttime="20220110 10:10:52.371" endtime="20220110 10:10:52.374"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.377" endtime="20220110 10:10:52.378"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.376" endtime="20220110 10:10:52.379"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.376" endtime="20220110 10:10:52.380"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.370" endtime="20220110 10:10:52.380"/>
+</iter>
+<iter>
+<var name="${i}">35</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.385" level="INFO">${random} = 2</msg>
+<status status="PASS" starttime="20220110 10:10:52.382" endtime="20220110 10:10:52.385"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.389" endtime="20220110 10:10:52.391"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.387" endtime="20220110 10:10:52.392"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.386" endtime="20220110 10:10:52.393"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.381" endtime="20220110 10:10:52.393"/>
+</iter>
+<iter>
+<var name="${i}">36</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.398" level="INFO">${random} = 8</msg>
+<status status="PASS" starttime="20220110 10:10:52.397" endtime="20220110 10:10:52.399"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.403" endtime="20220110 10:10:52.403"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.402" endtime="20220110 10:10:52.404"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.401" endtime="20220110 10:10:52.405"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.396" endtime="20220110 10:10:52.405"/>
+</iter>
+<iter>
+<var name="${i}">37</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.408" level="INFO">${random} = 5</msg>
+<status status="PASS" starttime="20220110 10:10:52.407" endtime="20220110 10:10:52.408"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.410" endtime="20220110 10:10:52.410"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.409" endtime="20220110 10:10:52.411"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.409" endtime="20220110 10:10:52.412"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.406" endtime="20220110 10:10:52.412"/>
+</iter>
+<iter>
+<var name="${i}">38</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.413" level="INFO">${random} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.413" endtime="20220110 10:10:52.414"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.415" endtime="20220110 10:10:52.416"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.415" endtime="20220110 10:10:52.417"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.414" endtime="20220110 10:10:52.418"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.412" endtime="20220110 10:10:52.418"/>
+</iter>
+<iter>
+<var name="${i}">39</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.419" level="INFO">${random} = 9</msg>
+<status status="PASS" starttime="20220110 10:10:52.419" endtime="20220110 10:10:52.420"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.421" endtime="20220110 10:10:52.422"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.421" endtime="20220110 10:10:52.423"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.420" endtime="20220110 10:10:52.423"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.418" endtime="20220110 10:10:52.423"/>
+</iter>
+<iter>
+<var name="${i}">40</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.425" level="INFO">${random} = 10</msg>
+<status status="PASS" starttime="20220110 10:10:52.424" endtime="20220110 10:10:52.426"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.428" endtime="20220110 10:10:52.429"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.427" endtime="20220110 10:10:52.429"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.427" endtime="20220110 10:10:52.430"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.424" endtime="20220110 10:10:52.430"/>
+</iter>
+<iter>
+<var name="${i}">41</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.433" level="INFO">${random} = 8</msg>
+<status status="PASS" starttime="20220110 10:10:52.431" endtime="20220110 10:10:52.433"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.435" endtime="20220110 10:10:52.436"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.434" endtime="20220110 10:10:52.437"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.434" endtime="20220110 10:10:52.437"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.431" endtime="20220110 10:10:52.437"/>
+</iter>
+<iter>
+<var name="${i}">42</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.440" level="INFO">${random} = 5</msg>
+<status status="PASS" starttime="20220110 10:10:52.439" endtime="20220110 10:10:52.440"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.442" endtime="20220110 10:10:52.443"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.441" endtime="20220110 10:10:52.443"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.441" endtime="20220110 10:10:52.444"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.438" endtime="20220110 10:10:52.444"/>
+</iter>
+<iter>
+<var name="${i}">43</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.446" level="INFO">${random} = 1</msg>
+<status status="PASS" starttime="20220110 10:10:52.445" endtime="20220110 10:10:52.447"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.449" endtime="20220110 10:10:52.450"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.448" endtime="20220110 10:10:52.450"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.448" endtime="20220110 10:10:52.451"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.445" endtime="20220110 10:10:52.451"/>
+</iter>
+<iter>
+<var name="${i}">44</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.453" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20220110 10:10:52.452" endtime="20220110 10:10:52.453"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.455" endtime="20220110 10:10:52.455"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.454" endtime="20220110 10:10:52.456"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.454" endtime="20220110 10:10:52.456"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.452" endtime="20220110 10:10:52.456"/>
+</iter>
+<iter>
+<var name="${i}">45</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.458" level="INFO">${random} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.458" endtime="20220110 10:10:52.459"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.460" endtime="20220110 10:10:52.461"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.460" endtime="20220110 10:10:52.461"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.459" endtime="20220110 10:10:52.462"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.457" endtime="20220110 10:10:52.462"/>
+</iter>
+<iter>
+<var name="${i}">46</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.464" level="INFO">${random} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.463" endtime="20220110 10:10:52.465"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.466" endtime="20220110 10:10:52.467"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.465" endtime="20220110 10:10:52.467"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.465" endtime="20220110 10:10:52.468"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.463" endtime="20220110 10:10:52.468"/>
+</iter>
+<iter>
+<var name="${i}">47</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.470" level="INFO">${random} = 6</msg>
+<status status="PASS" starttime="20220110 10:10:52.469" endtime="20220110 10:10:52.470"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.472" endtime="20220110 10:10:52.472"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.471" endtime="20220110 10:10:52.473"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.471" endtime="20220110 10:10:52.474"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.469" endtime="20220110 10:10:52.474"/>
+</iter>
+<iter>
+<var name="${i}">48</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.476" level="INFO">${random} = 5</msg>
+<status status="PASS" starttime="20220110 10:10:52.475" endtime="20220110 10:10:52.476"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.477" endtime="20220110 10:10:52.478"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.477" endtime="20220110 10:10:52.479"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.477" endtime="20220110 10:10:52.479"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.474" endtime="20220110 10:10:52.479"/>
+</iter>
+<iter>
+<var name="${i}">49</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220110 10:10:52.481" level="INFO">${random} = 3</msg>
+<status status="PASS" starttime="20220110 10:10:52.480" endtime="20220110 10:10:52.482"/>
+</kw>
+<if>
+<branch type="IF" condition="${random} == ${NUMBER_TO_PASS_ON}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Too low.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220110 10:10:52.483" endtime="20220110 10:10:52.484"/>
+</kw>
+<status status="NOT RUN" starttime="20220110 10:10:52.483" endtime="20220110 10:10:52.484"/>
+</branch>
+<status status="PASS" starttime="20220110 10:10:52.482" endtime="20220110 10:10:52.485"/>
+</if>
+<status status="PASS" starttime="20220110 10:10:52.480" endtime="20220110 10:10:52.485"/>
+</iter>
+<status status="PASS" starttime="20220110 10:10:52.057" endtime="20220110 10:10:52.486"/>
+</for>
+<tag>IF_ELSE_IF_ELSE</tag>
+<status status="PASS" starttime="20220110 10:10:52.056" endtime="20220110 10:10:52.486"/>
+</test>
+<doc>Loops exapmle</doc>
+<status status="PASS" starttime="20220110 10:10:52.026" endtime="20220110 10:10:52.487"/>
+</suite>
+<status status="PASS" starttime="20220110 10:10:52.006" endtime="20220110 10:10:52.489"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">ContinueIfTrue</stat>
+<stat pass="1" fail="0" skip="0">IF_ELSE_IF_ELSE</stat>
+<stat pass="1" fail="0" skip="0">Indexing</stat>
+<stat pass="1" fail="0" skip="0">ListCreationOnPlace</stat>
+<stat pass="1" fail="0" skip="0">Robots</stat>
+<stat pass="1" fail="0" skip="0">RobotsFind</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Robot loops">Robot loops</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="LoopTest">Robot loops.LoopTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220110 10:10:52.060" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.061" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.062" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.062" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.063" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.064" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.064" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.065" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.065" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.066" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.067" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.067" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.068" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.069" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.069" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.070" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.071" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.071" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.072" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.072" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.073" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.074" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.074" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.075" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.075" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.076" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.077" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.077" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.078" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.079" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.079" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.080" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.081" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.081" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.082" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.083" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.084" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.085" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.086" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.087" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.088" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.088" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.089" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.089" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.090" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.091" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.091" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.092" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.093" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.094" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.094" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.095" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.096" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.096" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.097" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.098" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.098" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.099" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.100" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.101" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.102" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.102" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.103" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.103" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.104" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.105" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.105" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.106" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.107" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.107" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.108" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.108" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.109" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.110" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.110" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.111" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.112" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.112" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.113" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.113" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.114" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.114" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.115" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.116" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.118" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.118" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.119" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.120" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.120" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.121" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.121" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.122" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.122" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.123" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.124" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.125" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.125" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.126" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.126" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.127" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.127" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.128" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.129" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.129" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.130" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.130" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.131" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.131" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.132" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.133" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.133" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.134" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.135" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.135" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.136" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.136" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.137" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.137" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.138" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.138" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.139" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.140" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.140" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.141" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.141" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.142" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.142" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.143" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.144" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.144" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.145" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.146" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.146" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.147" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.147" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.148" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.148" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.149" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.149" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.150" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.151" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.152" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.154" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.155" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.157" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.158" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.159" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.160" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.161" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.161" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.162" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.163" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.164" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.165" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.165" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.166" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.167" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.168" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.170" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.172" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.174" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.175" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.176" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.178" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.178" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.180" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.182" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.183" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.184" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.185" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.186" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.188" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.190" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.191" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.193" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.194" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.196" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.197" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.197" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.198" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.200" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.201" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.203" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.205" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.206" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.208" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.209" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.211" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.212" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.213" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.214" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.215" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.217" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.218" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.221" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.223" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.224" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.226" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.227" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.229" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.231" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.231" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.233" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.234" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.236" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.238" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.240" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.241" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.243" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.244" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.246" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.247" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.247" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.249" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.250" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.251" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.252" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.253" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.255" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.257" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.258" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.260" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.261" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.262" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.262" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.263" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.264" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.266" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.267" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.267" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.270" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.272" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.274" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.275" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.276" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.277" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.277" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.278" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.279" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.280" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.282" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.283" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.284" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.285" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.288" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.290" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.292" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.293" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.295" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.296" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.296" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.299" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.300" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.301" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.305" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.307" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.309" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.311" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.312" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.313" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.314" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.316" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.317" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.318" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.319" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.321" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.324" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.325" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.327" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.328" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.330" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.331" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.332" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.335" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.336" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.338" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.340" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.341" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.343" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.344" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.346" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.347" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.348" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.349" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.352" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.353" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.353" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.354" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.355" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.356" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.357" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.358" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.359" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.362" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.364" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.365" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.367" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.369" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.370" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.373" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.374" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.376" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.377" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.378" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.379" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.380" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.381" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.381" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.384" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.385" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.386" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.388" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.390" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.392" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.392" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.395" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.397" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.397" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.398" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.401" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.402" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.403" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.404" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.405" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.405" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.406" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.407" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.408" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.409" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.410" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.410" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.411" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.411" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.412" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.413" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.413" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.414" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.414" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.415" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.416" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.417" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.417" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.418" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.419" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.419" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.420" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.420" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.421" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.422" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.422" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.423" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.424" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.424" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.425" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.426" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.426" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.428" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.428" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.429" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.430" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.430" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.431" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.432" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.433" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.434" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.435" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.436" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.436" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.437" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.438" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.438" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.439" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.440" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.441" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.442" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.442" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.443" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.444" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.444" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.445" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.446" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.447" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.447" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.448" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.449" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.450" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.451" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.451" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.452" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.453" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.453" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.454" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.454" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.455" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.455" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.456" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.457" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.457" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.458" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.459" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.459" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.460" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.461" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.461" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.462" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.462" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.463" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.464" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.464" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.465" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.466" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.467" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.467" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.468" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.468" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.469" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.469" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.470" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.471" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.472" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.472" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.473" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.473" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.474" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.475" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.475" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.476" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.476" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.477" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.478" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.478" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.479" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.480" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.480" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.481" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.482" level="ERROR">Calling method 'log_message' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.482" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.483" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.484" level="ERROR">Calling method 'start_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.484" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.485" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.485" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.486" level="ERROR">Calling method 'end_keyword' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.487" level="ERROR">Calling method 'end_test' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.488" level="ERROR">Calling method 'end_suite' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+<msg timestamp="20220110 10:10:52.490" level="ERROR">Calling method 'end_suite' of listener 'C:\Users\Evgeny\AppData\Local\Temp\RobotTempDir6286626435131182087\TestRunnerAgent.py' failed: ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение</msg>
+</errors>
+</robot>
